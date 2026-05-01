@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Contact KiaGeet for inquiries, support, and business communication. Includes a form and location map."/>
+    <meta name="keywords" content="Contact, KiaGeet, business, email, map, Guwahati"/>
+    <meta name="Soniya" content="KiaGeet"/>
+    <title>Contact Us - KiaGeet </title>
+<style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header, footer {
+      background: linear-gradient(to right, #0077b6, #023e8a);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #0077b6;
+      outline: none;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      width: 150px;
+      padding: 8px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #005f8a;
+    }
+
+    .map-container {
+      margin-top: 30px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 280px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .business-info {
+        margin-top: 30px;
+        padding: 15px;
+        background-color: #f1f9ff;
+        border: 1px solid #d0e7f5;
+        border-radius: 10px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        width: 100%;
+      }
+    }
+  </style>
+
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      const mobilePattern = /^[0-9]{10}$/;
+
+      if (!name || !email || !mobile || !message) {
+        alert("All fields are required.");
+        return false;
+      }
+
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      if (!mobilePattern.test(mobile)) {
+        alert("Please enter a valid 10-digit mobile number.");
+        return false;
+      }
+
+      alert("Thank you! Your message has been submitted.");
+      return true;
+    }
+  </script>
+
+</head>
+<body>
+
+<header>
+    <center>
+    <h1>Contact Us</h1>
+    <p>We're here to help. Get in touch with KiaGeet.</p>
+    </center>
+</header>
+<main>
+<div class="container">
+    <div class="form-container">
+        <h2>Contact Form</h2>
+    <form onsubmit="return validateForm()"> 
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your Full Name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your Email" required />
+
+      <label for="mobile">Mobile Number</label>
+      <input type="text" id="mobile" name="mobile" placeholder="Enter your Mobile Number" required /> 
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="3" placeholder="Enter your message" required></textarea> 
+
+      <div style="display: flex; gap: 10px;">
+        <input type="submit" value="Send Message" />
+        <input type="reset" value="Reset" />
+      </div>
+    </form>
+    <div class="business-info">
+      <h2>Business Details</h2>
+      <p><strong>Business Name:</strong> KiaGeet Pvt. Ltd.</p>
+      <p><strong>Address:</strong> 123 MG Road, Guwahati, Assam, India</p>
+      <p><strong>Phone:</strong> +91-9876543210</p>
+      <p><strong>Email:</strong> contact@kiageet.com</p>
+      <p><strong>Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM</p>
+    </div>
+    
+
+    <div class="map-container">
+        <h2>Our Location</h2>
+        <p>Visit us at our office location:</p>
+        <!-- Google Maps Embed -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246536.90349209498!2d91.53807296286526!3d26.14295484338041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5a287f9133ff%3A0x2bbd1332436bde32!2sGuwahati%2C%20Assam!5e1!3m2!1sen!2sin!4v1743224825956!5m2!1sen!2sin" 
+           loading="lazy" aria-label="KiaGeet Office Location Map"></iframe>
+    </div>
+</div>  
+</main>
+
+<footer>
+    <p>&copy; 2025 KiaGeet. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
